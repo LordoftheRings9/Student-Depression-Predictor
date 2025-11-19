@@ -241,7 +241,7 @@ st.set_page_config(page_title="Student Depression Predictor", page_icon="🧠", 
 # -------------------- Load Model --------------------
 @st.cache_resource
 def load_model():
-    return joblib.load("basic_student_depression_model.pkl")
+    return joblib.load("AdaBoost_model.pkl")
 
 model = load_model()
 
