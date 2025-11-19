@@ -24,7 +24,7 @@ st.markdown("<h1 style='text-align: center; color: #0F172A;'>Student Depression 
 st.markdown("<h3 style='text-align: center; color: #6B7280;'>Enter the student's lifestyle and habits below</h3>", unsafe_allow_html=True)
     
 image = Image.open('9152887.jpg')
-st.image(image, use_container_width=True)
+    st.image(image, use_container_width=True)
     st.markdown("#### Please provide the student details here →")
     st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("#### Please provide the student details below:")
