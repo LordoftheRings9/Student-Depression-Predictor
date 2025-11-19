@@ -307,14 +307,9 @@ sleep_duration = sleep_mapping.get(sleep_duration, 7.5)
 
 # Default values for empty strings
 
-from sklearn.preprocessing import LabelEncoder
-city_encoder = joblib.load("city_encoder.pkl")
-profession_encoder = joblib.load("profession_encoder.pkl")
-degree_encoder = joblib.load("degree_encoder.pkl")
-
-city_encoded = city_encoder.transform([city])[0]
-profession_encoded = profession_encoder.transform([profession])[0]
-degree_encoded = degree_encoder.transform([degree])[0]
+city = city if city.strip() else "Unknown"
+profession = profession if profession.strip() else "Unknown"
+degree = degree if degree.strip() else "Unknown"
 
 # -------------------- Construct Input Data --------------------
 input_df = pd.DataFrame([[
