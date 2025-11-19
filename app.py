@@ -193,17 +193,18 @@ sleep_mapping = {
 sleep_duration = sleep_mapping.get(sleep_duration, 7.5)
 
 # Only include numeric features expected by the model
-input_data = pd.DataFrame([[id_val, gender, age, academic_pressure,
-                          work_pressure, cgpa, study_satisfaction, job_satisfaction,
-                          sleep_duration, dietary_habits, suicidal_thoughts,
-                          study_hours, financial_stress, family_history]],
-                        columns=[
-                            'id', 'Gender', 'Age', 'Academic Pressure', 'Work Pressure', 'CGPA',
-                            'Study Satisfaction', 'Job Satisfaction', 'Sleep Duration', 'Dietary Habits',
-                            'Have you ever had suicidal thoughts ?', 'Work/Study Hours',
-                            'Financial Stress', 'Family History of Mental Illness'
-                        ])
-
+input_data = pd.DataFrame([[
+    id_val, gender, age, city, profession, academic_pressure,
+    work_pressure, cgpa, study_satisfaction, job_satisfaction,
+    sleep_duration, dietary_habits, degree, suicidal_thoughts,
+    study_hours, financial_stress, family_history
+]], columns=[
+    'id', 'Gender', 'Age', 'City', 'Profession', 'Academic Pressure',
+    'Work Pressure', 'CGPA', 'Study Satisfaction', 'Job Satisfaction',
+    'Sleep Duration', 'Dietary Habits', 'Degree',
+    'Have you ever had suicidal thoughts ?', 'Work/Study Hours',
+    'Financial Stress', 'Family History of Mental Illness'
+])
 # -------------------- Prediction Button --------------------
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("<style>.stButton>button {background-color:#2E8B57;color:white;font-size:16px;border-radius:10px;}</style>", unsafe_allow_html=True)
