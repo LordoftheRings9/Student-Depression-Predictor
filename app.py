@@ -20,8 +20,6 @@ model = load_model()
 # Sidebar
 # ----------------------------
 
-    st.set_page_config(page_title="Student Depression Predictor", layout="wide")
-
 # Global style override for the built-in Streamlit title
 st.markdown(
     """
