@@ -20,7 +20,24 @@ model = load_model()
 # Sidebar
 # ----------------------------
 with st.sidebar:
-    st.title("Student Depression Predictor")
+    st.title(
+    """
+    <style>
+    .main-header {
+        background-color: #0F172A;  /* dark background */
+        padding: 1.5rem 1rem;
+    }
+    .main-header h1 {
+        color: #FFFFFF !important;  /* white text */
+        margin: 0;
+    }
+    </style>
+    <div class="main-header">
+        <h1>My Machine Learning Model UI</h1>
+    </div>
+    """,
+    unsafe_allow_html=True,
+)
     st.markdown("Predict the likelihood of depression in students.")
     st.markdown("---")
     st.markdown("Developed by: **Ayush Khare**")
