@@ -12,16 +12,6 @@ model = load_model()
 
 with st.sidebar:
 st.title("Depression Predictor")
-st.markdown(
-    """
-    <style>
-    h1:first-of-type {
-        color: #0F172A !important;
-    }
-    </style>
-    """,
-    unsafe_allow_html=True,
-)
 st.markdown("Predict the likelihood of depression in students.")
 st.markdown("---")
 st.markdown("Developed by: **Ayush Khare**")
