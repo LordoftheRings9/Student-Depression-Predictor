@@ -196,7 +196,7 @@ sleep_duration = sleep_mapping.get(sleep_duration, 7.5)
 input_df = pd.DataFrame([[id_val, gender, age, academic_pressure,
                           work_pressure, cgpa, study_satisfaction, job_satisfaction,
                           sleep_duration, dietary_habits, suicidal_thoughts,
-                          study_pressure_hours, financial_stress, family_history]],
+                          study_hours, financial_stress, family_history]],
                         columns=[
                             'id', 'Gender', 'Age', 'Academic Pressure', 'Work Pressure', 'CGPA',
                             'Study Satisfaction', 'Job Satisfaction', 'Sleep Duration', 'Dietary Habits',
