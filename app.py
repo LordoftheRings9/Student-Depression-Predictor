@@ -12,7 +12,7 @@ st.set_page_config(page_title="Student Depression Predictor", page_icon="🧠", 
 # Load trained model
 @st.cache_resource
 def load_model():
-    return joblib.load("AdaBoost_model.pkl")  # Load your trained model
+    return joblib.load("basic_student_depression_model.pkl")  # Load your trained model
 
 model = load_model()
 
@@ -20,23 +20,23 @@ model = load_model()
 # Sidebar
 # ----------------------------
 with st.sidebar:
-    st.title("🧠 Student Depression Predictor")
+    st.title("Student Depression Predictor")
     st.markdown("Predict the likelihood of depression in students.")
     st.markdown("---")
-    st.markdown("👨‍💻 Developed by: **Brajesh Ahirwar**")
-    st.markdown("🔗 GitHub: [Brajesh Ahirwar](https://github.com/brajesh2306)")
-    st.markdown("🔗 LinkedIn: [Profile](www.linkedin.com/in/brajesh-ahirwar-6269b728b)")
+    st.markdown("Developed by: **Ayush Khare**")
+    st.markdown("🔗 GitHub: [Ayush Khare](https://github.com/LordoftheRings9)")
+    st.markdown("🔗 LinkedIn: [Profile](https://www.linkedin.com/in/ayush-khare-226a79339?utm_source=share_via&utm_content=profile&utm_medium=member_android)")
     st.markdown("---")
-    st.markdown("✨ **Have fun exploring AI!**")
+    st.markdown("**Model accuracy will depend upon the accuracy of the data provided**")
 
 # ----------------------------
 # Header
 # ----------------------------
-st.markdown("<h1 style='text-align: center; color: #2E8B57;'>Student Depression Prediction 🧠</h1>", unsafe_allow_html=True)
-st.markdown("<h3 style='text-align: center; color: #808080;'>Enter the student's lifestyle and habits below</h3>", unsafe_allow_html=True)
+st.markdown("<h1 style='text-align: center; color: #0F172A;'>Student Depression Predictor</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: #6B7280;'>Enter the student's lifestyle and habits below</h3>", unsafe_allow_html=True)
 
 # background image
-image = Image.open('Artificial Intelligence Application in Mental Health Research copy.jpg')
+image = Image.open('9152887.jpg')
 st.image(image, use_container_width=True)
 
 st.markdown("<hr>", unsafe_allow_html=True)
