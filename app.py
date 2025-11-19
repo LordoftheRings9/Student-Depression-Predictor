@@ -19,26 +19,25 @@ model = load_model()
 # ----------------------------
 # Sidebar
 # ----------------------------
-with st.sidebar:
-   st.markdown(
+
+    st.set_page_config(page_title="Student Depression Predictor", layout="wide")
+
+# Global style override for the built-in Streamlit title
+st.markdown(
     """
     <style>
-    .main-header {
-        background-color: #0F172A;  /* dark background */
-        padding: 1.5rem 1rem;
-    }
-    .main-header h1 {
-        color: #FFFFFF !important;  /* white text */
-        margin: 0;
+    /* Target Streamlit's default page title */
+    h1 {
+        color: #0F172A !important;      /* dark, high-contrast text */
+        font-weight: 700 !important;    /* bold for emphasis */
     }
     </style>
-    <div class="main-header">
-        <h1>My Machine Learning Model UI</h1>
-    </div>
     """,
     unsafe_allow_html=True,
 )
 
+with st.sidebar:
+st.title("Depression Predictor")
     st.markdown("Predict the likelihood of depression in students.")
     st.markdown("---")
     st.markdown("Developed by: **Ayush Khare**")
