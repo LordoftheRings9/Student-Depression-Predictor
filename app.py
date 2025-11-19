@@ -20,7 +20,7 @@ model = load_model()
 # Sidebar
 # ----------------------------
 with st.sidebar:
-    st.title(
+   st.markdown(
     """
     <style>
     .main-header {
@@ -38,6 +38,7 @@ with st.sidebar:
     """,
     unsafe_allow_html=True,
 )
+
     st.markdown("Predict the likelihood of depression in students.")
     st.markdown("---")
     st.markdown("Developed by: **Ayush Khare**")
