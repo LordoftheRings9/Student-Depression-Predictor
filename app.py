@@ -4,64 +4,39 @@ import pandas as pd
 import joblib
 from PIL import Image
 
-# ----------------------------
-# Configure Streamlit App
-# ----------------------------
 st.set_page_config(page_title="Student Depression Predictor", page_icon="🧠", layout="wide")
-
-# Load trained model
 @st.cache_resource
 def load_model():
     return joblib.load("basic_student_depression_model.pkl")  # Load your trained model
-
 model = load_model()
 
-# ----------------------------
-# Sidebar
-# ----------------------------
-
-# Global style override for the built-in Streamlit title
+with st.sidebar:
+st.title("Depression Predictor")
 st.markdown(
     """
     <style>
-    /* Target Streamlit's default page title */
-    h1 {
-        color: #0F172A !important;      /* dark, high-contrast text */
-        font-weight: 700 !important;    /* bold for emphasis */
+    h1:first-of-type {
+        color: #0F172A !important;
     }
     </style>
     """,
     unsafe_allow_html=True,
 )
-
-with st.sidebar:
-st.title("Depression Predictor")
-    st.markdown("Predict the likelihood of depression in students.")
-    st.markdown("---")
-    st.markdown("Developed by: **Ayush Khare**")
-    st.markdown("🔗 GitHub: [Ayush Khare](https://github.com/LordoftheRings9)")
-    st.markdown("🔗 LinkedIn: [Profile](https://www.linkedin.com/in/ayush-khare-226a79339?utm_source=share_via&utm_content=profile&utm_medium=member_android)")
-    st.markdown("---")
-    st.markdown("**Model accuracy will depend upon the accuracy of the data provided**")
-
-# ----------------------------
-# Header
-# ----------------------------
+st.markdown("Predict the likelihood of depression in students.")
+st.markdown("---")
+st.markdown("Developed by: **Ayush Khare**")
+st.markdown("🔗 GitHub: [Ayush Khare](https://github.com/LordoftheRings9)")
+st.markdown("🔗 LinkedIn: [Profile](https://www.linkedin.com/in/ayush-khare-226a79339?utm_source=share_via&utm_content=profile&utm_medium=member_android)")
+st.markdown("---")
+st.markdown("**Model accuracy will depend upon the accuracy of the data provided**")
 st.markdown("<h1 style='text-align: center; color: #0F172A;'>Student Depression Predictor</h1>", unsafe_allow_html=True)
 st.markdown("<h3 style='text-align: center; color: #6B7280;'>Enter the student's lifestyle and habits below</h3>", unsafe_allow_html=True)
-
-# background image
 image = Image.open('9152887.jpg')
 st.image(image, use_container_width=True)
-
 st.markdown("<hr>", unsafe_allow_html=True)
 st.markdown("#### Please provide the student details below:")
 
-# ----------------------------
-# Input Form using Columns
-# ----------------------------
 col1, col2 = st.columns(2)
-
 with col1:
     id_val = st.number_input("Student ID (any numeric value)", min_value=0, step=1)
     gender = st.radio("Gender", ["Male", "Female"])
@@ -83,9 +58,6 @@ with col2:
     cgpa = st.number_input("CGPA", min_value=0.0, max_value=10.0, step=0.01)
     degree = st.text_input("Degree")
 
-# ----------------------------
-# Mapping categorical to numeric
-# ----------------------------
 gender = 1 if gender == 'Male' else 0
 dietary_habits = 1 if dietary_habits == 'Healthy' else 0
 suicidal_thoughts = 1 if suicidal_thoughts == 'Yes' else 0
@@ -99,9 +71,6 @@ sleep_mapping = {
 }
 sleep_duration = sleep_mapping.get(sleep_duration, 7.5)
 
-# ----------------------------
-# Create Input DataFrame (17 Features)
-# ----------------------------
 columns = ['id', 'Gender', 'Age', 'City', 'Profession', 'Academic Pressure',
            'Work Pressure', 'CGPA', 'Study Satisfaction', 'Job Satisfaction',
            'Sleep Duration', 'Dietary Habits', 'Degree',
@@ -114,9 +83,6 @@ input_df = pd.DataFrame([[id_val, gender, age, city, profession, academic_pressu
                           study_pressure_hours, financial_stress, family_history]],
                         columns=columns)
 
-# ----------------------------
-# Stylish Predict Button
-# ----------------------------
 button_style = """
 <style>
 .stButton>button {
@@ -134,10 +100,6 @@ button_style = """
 </style>
 """
 st.markdown(button_style, unsafe_allow_html=True)
-
-# ----------------------------
-# Prediction Logic
-# ----------------------------
 if st.button("Predict"):
     with st.spinner("Predicting..."):
         try:
