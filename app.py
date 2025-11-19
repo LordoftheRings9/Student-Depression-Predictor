@@ -19,12 +19,15 @@ with st.sidebar:
     st.markdown("🔗 LinkedIn: [Profile](https://www.linkedin.com/in/ayush-khare-226a79339?utm_source=share_via&utm_content=profile&utm_medium=member_android)")
     st.markdown("---")
     st.markdown("**Model accuracy will depend upon the accuracy of the data provided**")
-    st.markdown("<h1 style='text-align: center; color: #0F172A;'>Student Depression Predictor</h1>", unsafe_allow_html=True)
-    st.markdown("<h3 style='text-align: center; color: #6B7280;'>Enter the student's lifestyle and habits below</h3>", unsafe_allow_html=True)
-    image = Image.open('9152887.jpg')
-    st.image(image, use_container_width=True)
+    
+st.markdown("<h1 style='text-align: center; color: #0F172A;'>Student Depression Predictor</h1>", unsafe_allow_html=True)
+st.markdown("<h3 style='text-align: center; color: #6B7280;'>Enter the student's lifestyle and habits below</h3>", unsafe_allow_html=True)
+    
+image = Image.open('9152887.jpg')
+st.image(image, use_container_width=True)
+    st.markdown("#### Please provide the student details here →")
     st.markdown("<hr>", unsafe_allow_html=True)
-    st.markdown("#### Please provide the student details below:")
+st.markdown("#### Please provide the student details below:")
 
 col1, col2 = st.columns(2)
 with col1:
