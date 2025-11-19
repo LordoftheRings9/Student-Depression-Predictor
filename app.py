@@ -193,7 +193,7 @@ sleep_mapping = {
 sleep_duration = sleep_mapping.get(sleep_duration, 7.5)
 
 # Only include numeric features expected by the model
-input_df = pd.DataFrame([[id_val, gender, age, academic_pressure,
+input_data = pd.DataFrame([[id_val, gender, age, academic_pressure,
                           work_pressure, cgpa, study_satisfaction, job_satisfaction,
                           sleep_duration, dietary_habits, suicidal_thoughts,
                           study_hours, financial_stress, family_history]],
